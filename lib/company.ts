@@ -4,7 +4,7 @@ export const company = {
   tagLine: "Emergency power systems built for critical uptime.",
   description:
     "Northern Generator supplies, services, upgrades, and supports emergency power systems across Ontario with a 24/7 response mindset.",
-  siteUrl: "https://tertieuse.github.io/Northern-Generator",
+  siteUrl: "https://tertieuse.github.io/Northern-Generator-Pages",
   email: "ngc@northerngenerator.com",
   phone: "905.264.9744",
   tollFree: "1.866.832.2489",
