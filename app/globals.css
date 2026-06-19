@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
-  --muted: #94a3b8;
-  --line: rgba(148, 163, 184, 0.16);
-  --cyan-glow: rgba(34, 211, 238, 0.32);
+  --background: #f6f8fc;
+  --foreground: #102043;
+  --muted: #5f6f93;
+  --blue: #21428f;
+  --orange: #f26522;
+  --line: rgba(33, 66, 143, 0.08);
 }
 
 @theme inline {
@@ -15,35 +16,23 @@
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html,
-body {
+html, body {
   margin: 0;
   min-height: 100%;
   background:
-    radial-gradient(circle at top, rgba(14, 165, 233, 0.18), transparent 26%),
-    linear-gradient(180deg, #020617 0%, #071124 45%, #020617 100%);
+    radial-gradient(circle at top right, rgba(242, 101, 34, 0.08), transparent 24%),
+    radial-gradient(circle at top left, rgba(33, 66, 143, 0.10), transparent 26%),
+    linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
 }
 
-body {
-  overflow-x: hidden;
-}
+body { overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-shell {
-  position: relative;
-  isolation: isolate;
-}
-
+.site-shell { position: relative; isolation: isolate; }
 .site-shell::before {
   content: "";
   position: fixed;
@@ -52,46 +41,27 @@ a {
   background-image:
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(circle at top, rgba(0, 0, 0, 0.7), transparent 78%);
-  opacity: 0.22;
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at top, rgba(0, 0, 0, 0.8), transparent 80%);
+  opacity: 0.4;
 }
 
-.hero-grid {
-  position: relative;
-}
-
+.hero-grid { position: relative; }
 .hero-grid::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(120deg, transparent 20%, rgba(34, 211, 238, 0.08) 46%, transparent 58%);
+  background: linear-gradient(120deg, transparent 20%, rgba(242, 101, 34, 0.06) 48%, transparent 58%);
   transform: translateX(-60%);
   animation: sweep 9s linear infinite;
 }
 
 @keyframes sweep {
-  100% {
-    transform: translateX(120%);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.rounded-float {
-  animation: float 6s ease-in-out infinite;
+  100% { transform: translateX(120%); }
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.35);
-  color: white;
+  background: rgba(33, 66, 143, 0.18);
+  color: #102043;
 }

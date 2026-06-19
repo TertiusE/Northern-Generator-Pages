@@ -5,7 +5,7 @@ import { serviceSlugs } from "@/lib/services";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/about", "/services", "/rentals", "/faq", "/contact"];
+  const routes = ["", "/about", "/services", "/rentals", "/contact"];
 
   return [
     ...routes.map((route) => ({

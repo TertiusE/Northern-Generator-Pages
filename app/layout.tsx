@@ -4,25 +4,25 @@ import { ContactPill } from "@/components/ContactPill";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
-import { company, fullAddress } from "@/lib/company";
+import { company } from "@/lib/company";
 
 export const metadata: Metadata = {
   metadataBase: new URL(company.siteUrl),
   title: {
-    default: `${company.name} | Emergency Power Specialist`,
+    default: `${company.name} | ${company.tagLine}`,
     template: `%s | ${company.name}`,
   },
   description: company.description,
   keywords: [
     "Northern Generator",
-    "generator service Ontario",
     "emergency power systems",
-    "automatic transfer switches",
+    "generator service",
     "generator rentals",
     "fuel systems",
+    "transfer switches",
   ],
   openGraph: {
-    title: `${company.name} | Emergency Power Specialist`,
+    title: `${company.name} | ${company.tagLine}`,
     description: company.description,
     type: "website",
     url: company.siteUrl,
@@ -48,19 +48,15 @@ const organizationJsonLd = {
     addressCountry: company.address.country,
   },
   areaServed: "Ontario",
-  image: `${company.siteUrl}/images/generator-service.png`,
+  image: `${company.siteUrl}/images/logo.png`,
   url: company.siteUrl,
   slogan: company.tagLine,
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="h-full scroll-smooth bg-slate-950">
-      <body className="min-h-full bg-slate-950 text-white antialiased">
+    <html lang="en" className="h-full scroll-smooth bg-[#f6f8fc]">
+      <body className="min-h-full bg-[#f6f8fc] text-slate-900 antialiased">
         <JsonLd data={organizationJsonLd} />
         <div className="site-shell">
           <Header />
@@ -68,7 +64,6 @@ export default function RootLayout({
           <Footer />
         </div>
         <ContactPill />
-        <div className="sr-only">{fullAddress}</div>
       </body>
     </html>
   );
